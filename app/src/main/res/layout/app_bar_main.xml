@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -20,52 +20,97 @@
         <TextView
             android:id="@+id/textView5"
             android:layout_width="110dp"
-            android:layout_height="30dp"
-            android:layout_alignParentStart="true"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="108dp"
-            android:text="Bill Amount"
+            android:layout_marginTop="112dp"
+            android:layout_toStartOf="@+id/Tip"
+            android:text="    Bill Amount"
             android:textColor="@android:color/black" />
 
         <EditText
             android:id="@+id/billAmount"
             android:layout_width="200dp"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/textView5"
             android:layout_marginEnd="54dp"
             android:ems="10"
             android:hint="enter your bill amount"
-            android:inputType="number"
-            android:text="Name" />
+            android:inputType="none" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="110dp"
-            android:layout_height="30dp"
-            android:layout_alignParentStart="true"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/textView5"
             android:layout_marginTop="188dp"
-            android:text="tip en %"
+            android:text="     tip %"
             android:textColor="@android:color/black" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/Tip"
             android:layout_width="200dp"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_alignBottom="@+id/textView6"
             android:layout_alignStart="@+id/billAmount"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="enter your tip %"
+            android:inputType="none|number" />
 
-        <ImageView
-            android:id="@+id/imageView"
+        <ImageButton
+            android:id="@+id/Help"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignBottom="@+id/textView6"
             android:layout_alignParentEnd="true"
-            app:srcCompat="@drawable/suggestion" />
+            app:srcCompat="@android:drawable/ic_menu_help" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="235dp"
+            android:text="Help"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="207dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/textView5"
+            android:layout_marginBottom="241dp"
+            android:text="  Number of people that will pay"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/NumberOfPeople"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="248dp"
+            android:layout_marginEnd="30dp"
+            android:ems="10"
+            android:inputType="number"
+            android:text="1"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/Calculate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="94dp"
+            android:layout_marginStart="77dp"
+            android:text="Calculate"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

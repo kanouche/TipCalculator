@@ -12,9 +12,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private EditText billAmount;
+    private EditText Tip;
+    private EditText NumberOfPeople;
+    private ImageButton Help;
+    private Button Calculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +33,11 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        billAmount = (EditText) findViewById(R.id.billAmount);
+        Tip = (EditText) findViewById(R.id.Tip);
+        NumberOfPeople = (EditText) findViewById(R.id.NumberOfPeople);
+        Help = (ImageButton) findViewById(R.id.Help);
+        Calculate = (Button) findViewById(R.id.Calculate);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -33,6 +47,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override

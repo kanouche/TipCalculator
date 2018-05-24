@@ -1,9 +1,6 @@
 package com.example.ramzy2.tipcalculator;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,16 +12,15 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private EditText billAmount;
-    private EditText Tip;
-    private EditText NumberOfPeople;
-    private ImageButton Help;
-    private Button Calculate;
+    private EditText tip;
+    private EditText numberOfPeople;
+    private ImageButton help;
+    private Button calculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +30,12 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         billAmount = (EditText) findViewById(R.id.billAmount);
-        Tip = (EditText) findViewById(R.id.Tip);
-        NumberOfPeople = (EditText) findViewById(R.id.NumberOfPeople);
-        Help = (ImageButton) findViewById(R.id.Help);
-        Calculate = (Button) findViewById(R.id.Calculate);
+        tip = (EditText) findViewById(R.id.Tip);
+        numberOfPeople = (EditText) findViewById(R.id.NumberOfPeople);
+        help = (ImageButton) findViewById(R.id.Help);
+        calculate = (Button) findViewById(R.id.Calculate);
+
+        //calculate.setOnClickListener(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -48,6 +46,11 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+    }
+
+    public void calculate(int billAmount, int Tip, int NumberOfPeople)
+    {
 
     }
 

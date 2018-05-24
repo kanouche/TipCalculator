@@ -14,7 +14,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#b5ab3f"
+            android:background="@android:color/holo_blue_dark"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         <TextView
@@ -36,7 +36,8 @@
             android:layout_marginEnd="54dp"
             android:ems="10"
             android:hint="enter your bill amount"
-            android:inputType="none" />
+            android:inputType="number" />
+
 
         <TextView
             android:id="@+id/textView6"
@@ -56,7 +57,7 @@
             android:layout_alignStart="@+id/billAmount"
             android:ems="10"
             android:hint="enter your tip %"
-            android:inputType="none|number" />
+            android:inputType="number" />
 
         <ImageButton
             android:id="@+id/Help"

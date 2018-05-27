@@ -9,12 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.content.Intent;
+
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements View.OnClickListener {
 
     private EditText billAmount;
     private EditText tip;
@@ -35,7 +38,10 @@ public class MainActivity extends AppCompatActivity
         help = (ImageButton) findViewById(R.id.Help);
         calculate = (Button) findViewById(R.id.Calculate);
 
-        //calculate.setOnClickListener(this);
+
+        help.setOnClickListener((View.OnClickListener) this);
+        calculate.setOnClickListener((View.OnClickListener) this);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -43,15 +49,39 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        //NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        //navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
 
 
     }
 
-    public void calculate(int billAmount, int Tip, int NumberOfPeople)
-    {
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.Help:
+                startActivity(new Intent(MainActivity.this,suggestTip_Activity.class));
+                break;
+            case R.id.Calculate:
+                calculate();
+                // waiting for summary class to get ccreated
+                // startActivity(new Intent(MainActivity.this,Summary.class));
+                break;
+            default:
 
+        }
+    }
+
+    private void calculate(){
+       /* int amount = etEmail.getText().toString();
+        int tip = etPass.getText().toString();
+        int nmrOfPeople = etPeople.getText().toString();
+
+        if(db.getUser(email,pass)){
+            session.setLoggedin(true);
+            startActivity(new Intent(LoginActivity.this, menu.class));
+            finish();
+        }else{
+            Toast.makeText(getApplicationContext(), "Wrong email/password",Toast.LENGTH_SHORT).show();
+        } */
     }
 
     @Override
@@ -87,7 +117,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
